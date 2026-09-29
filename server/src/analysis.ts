@@ -106,13 +106,13 @@ export async function runAnalysis(input: { filename?: string; text?: string } = 
 
   // If running demo without custom text but Gemini is active, let's analyze default contract text with Gemini
   if (!text && isGeminiConfigured()) {
-    const demoContractText = `VENDOR MASTER SERVICES AGREEMENT
-Between Acme Corp ("Company") and Global Cloud Services Ltd ("Vendor").
-1. Payment Terms: Company shall pay all valid and undisputed invoices Net 30 days from receipt.
-2. Security & Compliance: Vendor must deliver SOC 2 Type II audit report within 30 days of contract execution and maintain ISO 27001 certification.
-3. Monthly Reporting: Vendor Manager shall provide monthly uptime and KPI reports by the 5th of each calendar month.
-4. Renewal & Termination: This agreement will automatically renew unless either party provides written notice of non-renewal at least 30 days before expiration.
-5. Liability: Vendor liability shall be capped at 2x annual fees, except in cases of confidentiality breaches or gross negligence.`;
+    const demoContractText = `TATA CONSULTANCY SERVICES (TCS) MASTER SERVICES AGREEMENT (MSA)
+Between Bharat Enterprise Systems Pvt Ltd ("Company") and Tata Consultancy Services Ltd ("Vendor").
+1. Payment & Installments: Company shall pay all valid and undisputed invoices in Indian Rupees (₹3,50,000/month) Net 30 days via RTGS.
+2. Security & Compliance: Vendor must deliver SOC 2 Type II audit report and Indian DPDP Act 2023 compliance certification within 30 days of contract execution.
+3. Monthly Reporting: Vendor Manager shall provide monthly uptime (99.95%) and KPI reports by the 5th of each calendar month.
+4. Renewal & Termination: This agreement will automatically renew unless either party provides written notice of non-renewal at least 60 days before expiration.
+5. Liability: Vendor liability shall be capped at 2x annual contract fees in Indian Rupees (₹), except in cases of confidentiality breaches or gross negligence.`;
 
     const llmResult = await analyzeContractWithGemini(demoContractText, filename);
     if (llmResult) {
